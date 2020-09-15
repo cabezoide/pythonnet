@@ -96,7 +96,7 @@ def worker():
             cmd = 'ip vrf VRF_MGMT\r'
             c.sendline(cmd)
             c.expect('#')
-            cmd = 'rd 10:100\r'
+            cmd = 'rd 77:77\r'
             c.sendline(cmd)
             c.expect('#')
             cmd = 'route-target export 77:77\r'
