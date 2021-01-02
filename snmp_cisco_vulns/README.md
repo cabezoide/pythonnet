@@ -1,7 +1,7 @@
 # snmp_cisco_vulns.py
 #Script that obtains Cisco Vulns given IPv4 host list and snmp community
 
-#You must provide you API Keys from OpenVulnAPI and once obtained change this lines in script
+#You must provide you API Keys from OpenVulnAPI and once obtained change these lines in script
 
 # Cisco Openvuln API pre-set variables, change accordingly
 
