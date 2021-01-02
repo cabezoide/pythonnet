@@ -19,7 +19,7 @@ CLIENT_SECRET = 'YOUR_API_CLIENT_SECRET_HERE'
 '''Arguments'''
 
 parser = argparse.ArgumentParser(
-    prog='./net_cisco_vulns.py OPTIONS', description='Script that obtains Cisco Vulns given IPv4 host list and snmp community')
+    prog='./snmp_cisco_vulns.py OPTIONS', description='Script that obtains Cisco Vulns given IPv4 host list and snmp community')
 parser.add_argument('-f', '--file', action="store", dest="file",
                     type=str, help=".csv or plain-text file with IP or hostname list, one per line", required = True)
 parser.add_argument('-c', '--community', action="store", dest="snmp_community",
