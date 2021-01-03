@@ -97,16 +97,15 @@ def read_file():
 def worker():
     """Obtains host version by SNMP, then queries Cisco Openvuln API"""
     global query_client
+    query_client = query_client.OpenVulnQueryClient(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
     for address in address_ipv4:
         address = str(address[0])
-
         result = get(address, ['1.3.6.1.2.1.1.1.0'], snmp_community)
         sysdescr = sysdescrparser(result['1.3.6.1.2.1.1.1.0'])
 
         print('HOST: %s; vendor: %s; model: %s; version: %s' % (address, sysdescr.vendor, sysdescr.model, sysdescr.version))
 
         if sysdescr.vendor == 'CISCO':
-            query_client = query_client.OpenVulnQueryClient(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
             try:
                 advisories = query_client.get_by_ios('ios', sysdescr.version)
                 for element in advisories:
