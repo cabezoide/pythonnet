@@ -70,7 +70,7 @@ def genera_base_datos():
     return bd_payload
 
 def worker():
-    """Genera connection and configures ipv4"""
+    """Generate connection and configures ipv4"""
     # connection data
     device = pyfortiapi.FortiGate(ipaddr=IP_FW, port=PORT_FW,
     username=USER_FW,
